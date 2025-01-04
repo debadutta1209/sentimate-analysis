@@ -1,0 +1,9 @@
+textblob
+nltk
+pandas
+streamlit
+clean-text
+transformers
+matplotlib
+scipy
+seaborn
