@@ -124,6 +124,11 @@ elif app_mode == "Bulk Feedback (CSV)":
                 # Sentiment Distribution Visualization
                 st.subheader("Sentiment Distribution")
                 sentiment_counts = results_df['Sentiment'].value_counts()
+
+                # Ensure all sentiment categories are represented
+                sentiment_categories = ['Positive', 'Negative', 'Neutral']
+                sentiment_counts = sentiment_counts.reindex(sentiment_categories, fill_value=0)
+
                 st.bar_chart(sentiment_counts)
 
         except Exception as e:
