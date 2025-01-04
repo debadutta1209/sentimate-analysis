@@ -1,10 +1,10 @@
-textblob
-nltk
-pandas
 streamlit
-clean-text
-transformers
+pandas
+numpy
 matplotlib
+nltk
+textblob
+cleantext
+transformers
 scipy
-seaborn
 torch
