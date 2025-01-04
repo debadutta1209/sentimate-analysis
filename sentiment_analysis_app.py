@@ -93,8 +93,11 @@ elif app_mode == "Bulk Feedback (CSV)":
 
     if uploaded_file:
         try:
-            # Load the dataset
-            df = pd.read_csv(uploaded_file)
+            # Load the dataset with a fallback encoding
+            try:
+                df = pd.read_csv(uploaded_file, encoding='utf-8')  # Default encoding
+            except UnicodeDecodeError:
+                df = pd.read_csv(uploaded_file, encoding='latin-1')  # Fallback encoding
 
             if 'Text' not in df.columns:
                 st.error("The uploaded CSV must contain a 'Text' column.")
