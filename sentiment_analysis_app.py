@@ -123,7 +123,8 @@ elif app_mode == "Bulk Feedback (CSV)":
 
                 # Sentiment Distribution Visualization
                 st.subheader("Sentiment Distribution")
-                st.bar_chart(results_df['Sentiment'].value_counts())
+                sentiment_counts = results_df['Sentiment'].value_counts()
+                st.bar_chart(sentiment_counts)
 
         except Exception as e:
             st.error(f"Error processing the file: {e}")
